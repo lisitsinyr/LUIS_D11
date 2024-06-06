@@ -1,0 +1,45 @@
+package luPackage;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST ON}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$DESCRIPTION 'Luis Net components'}
+{$IMPLICITBUILD OFF}
+
+requires
+  vcl;
+
+contains
+  LULM in 'LULM.pas',
+  LMServer in 'LM\LMServer.pas',
+  LMCons in 'LM\LMCons.pas',
+  LMErrText in 'LM\LMErrText.pas',
+  LmErrLU in 'LM\LmErrLU.pas',
+  LMAPIbuf in 'LM\LMAPIbuf.pas',
+  LUSI in 'LUSI.pas',
+  LMaccess in 'LM\LMaccess.pas',
+  LUWNet in 'LUWNet.pas';
+
+end.

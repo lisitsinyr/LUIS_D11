@@ -1,0 +1,986 @@
+(*
+ =======================================================
+ Copyright (c) 2023
+ Author:
+     Lisitsin Y.R.
+ Project:
+     LU_PAS
+     Delphi VCL Extensions (LU)
+ Module:
+     LUObjects
+
+ =======================================================
+*)
+
+unit LUObjects;
+
+interface
+
+uses
+    {}
+        Classes, SysUtils, Forms,
+    {}
+    RxCtrls,
+    {}
+    LUSupport, LUStrUtils, LUThreadProgress;
+
+{ =========================================================================== }
+const
+    sMonthName: array [1 .. 12] of string = ('январь', 'февраль', 'март',
+        'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь',
+        'ноябрь', 'декабрь');
+    sMonthName0: array [0 .. 12] of string = ('По всем', 'январь', 'февраль',
+        'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь',
+        'октябрь', 'ноябрь', 'декабрь');
+
+const
+    cProgressBarMax = 20;
+    cSleep = 500;
+
+type
+    TObjectType = (otNone, otFile, otDirectory, otUser, otMonth, otEMail,
+        otFTPServer, otYouTubeObject,
+        { }
+        otExchange, otFolder, otInfoStore, otMessage, otMessageFilter,
+        otAttachment, otField, otAddressEntry, otAddressList, otRecipient,
+        otTask, otTasks, otFiles, otMailBox, otUsers, otHomeBox,
+        { }
+        otFormMessage, otReportDeliverMessage, otConfirmationMessage,
+        otInfoMessage, otDataMFOMessage, otErrorMessage);
+
+{ TYoutubeThread }
+
+type
+    TYoutubeThread = class(TProgressThread)
+    protected
+        procedure Execute; override;
+
+    public
+        FStopYouTubeBooleanThread: Boolean;
+        FObjectIDStr: string;
+    end;
+
+{ TObjects }
+
+type
+    TObjects = class(TComponent)
+    private
+        FObjectType: TObjectType;
+        FTag: Longint;
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        property ObjectType: TObjectType read FObjectType write FObjectType;
+        property Tag: Longint read FTag write FTag;
+    end;
+
+{ TFile }
+
+type
+    TFile = class(TObjects)
+    private
+        FTaskName: PChar;
+        FFileName: PChar;
+        FFileDate: TDateTime;
+        FFileSize: Longint;
+        function GetFileName: string;
+        procedure SetFileName (const Value: string);
+        function GetTaskName: string;
+        procedure SetTaskName (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property FileName: string read GetFileName write SetFileName;
+        property FileDate: TDateTime read FFileDate write FFileDate;
+        property FileSize: Longint read FFileSize write FFileSize;
+        property TaskName: string read GetTaskName write SetTaskName;
+    end;
+
+{ TMailbox }
+
+type
+    TMailbox = class(TObjects)
+    private
+        FMailboxName: PChar;
+        function GetMailboxName: string;
+        procedure SetMailboxName (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property MailboxName: string read GetMailboxName write SetMailboxName;
+    end;
+
+{ TFTPServer }
+
+type
+    TFTPServer = class(TObjects)
+    private
+        FFTPServerName: PChar;
+        function GetFTPServerName: string;
+        procedure SetFTPServerName (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property FTPServerName: string read GetFTPServerName
+            write SetFTPServerName;
+    end;
+
+{ TDirectory }
+
+type
+    TDirectory = class(TObjects)
+    private
+        FDirectoryName: PChar;
+        FDirectoryDate: TDateTime;
+        function GetDirectoryName: string;
+        procedure SetDirectoryName (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property DirectoryName: string read GetDirectoryName
+            write SetDirectoryName;
+        property DirectoryDate: TDateTime read FDirectoryDate
+            write FDirectoryDate;
+    end;
+
+{ TUser }
+
+type
+    TUser = class(TObjects)
+    private
+        FTaskNames: TStringList;
+        FUserName: PChar;
+        function GetUserName: string;
+        procedure SetUserName (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property UserName: string read GetUserName write SetUserName;
+        property TaskNames: TStringList read FTaskNames;
+    end;
+
+{ TMonth }
+
+type
+    TMonth = class(TObjects)
+    private
+        FMonth: Integer;
+        function GetMonthName: string;
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property MonthName: string read GetMonthName;
+        property Month: Integer read FMonth write FMonth;
+    end;
+
+   { TEMail }
+
+type
+    TEMail = class(TObjects)
+    private
+        FEMail: PChar;
+        FList: TStringList;
+        function GetEMail (const AddressType: string): string;
+        procedure SetEMail (const AddressType, Value: string);
+        procedure WorkEMail (AddressType: string);
+        function GetDomain (ADimention: Integer): string;
+        function GetUser: string;
+        function GetDomainCount: Integer;
+        { }
+        property List: TStringList read FList;
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        property EMail[const AddressType: string]: string read GetEMail
+            write SetEMail;
+        property Domain[ADimention: Integer]: string read GetDomain;
+        property DomainCount: Integer read GetDomainCount;
+        property User: string read GetUser;
+    end;
+
+{ TYouTubeObject }
+
+type
+    TYouTubeObject = class(TObjects)
+    private
+        FURL: PChar;
+        FID: TDateTime;
+        FProgressMax: Integer;
+        FRxProgress: TRxProgress;
+        FStopYouTubeBoolean: Boolean;
+        FYoutubeThread: TYoutubeThread;
+        // FYT: TazYouTubeApi;
+        // FInfo: TazInfo;
+        function GetURL: string;
+        procedure SetURL (const Value: string);
+
+    public
+        constructor Create (AOwner: TComponent); override;
+        destructor Destroy; override;
+        procedure Clear;
+        { }
+        procedure StartYouTube;
+        procedure StopYouTube;
+        { }
+        procedure UpdateProgressBarThread (aProgress: Integer);
+        procedure StartYouTubeThread (aTerminateProc: TTerminateProc);
+        procedure StopYouTubeThread;
+        { }
+        property URL: string read GetURL write SetURL;
+        property ID: TDateTime read FID write FID;
+        property StopYouTubeBoolean: Boolean read FStopYouTubeBoolean
+            write FStopYouTubeBoolean;
+        property ProgressMax: Integer read FProgressMax write FProgressMax;
+        property RxProgress: TRxProgress read FRxProgress write FRxProgress;
+        property YoutubeThread: TYoutubeThread read FYoutubeThread
+            write FYoutubeThread;
+        // property Info: TazInfo read FInfo write FInfo;
+    end;
+
+{ ======================================================= }
+{ КОЛЛЕКЦИИ обьектов }
+{ ======================================================= }
+
+{ TObjectsItem }
+
+type
+    TObjectsItem = class(TCollectionItem)
+    private
+        FObjects: TObjects;
+
+    protected
+    public
+        constructor Create (AOwner: TCollection); override;
+        destructor Destroy; override;
+        property Objects: TObjects read FObjects;
+    end;
+
+{ TObjectsCollection }
+
+type
+    TObjectsCollection = class(TCollection)
+    private
+        function GetItem (Index: Integer): TObjectsItem;
+        procedure SetItem (Index: Integer; Value: TObjectsItem);
+        function GetObjects (Value: string): TObjects;
+
+    public
+        constructor Create;
+        function Add: TObjectsItem;
+        property Items[index: Integer]: TObjectsItem read GetItem
+            write SetItem; default;
+        property Objects[Value: string]: TObjects read GetObjects;
+    end;
+
+{ TYouTubeObjectsItem }
+
+type
+    TYouTubeObjectsItem = class(TCollectionItem)
+    private
+        FYouTubeObject: TYouTubeObject;
+
+    protected
+    public
+        constructor Create (AOwner: TCollection); override;
+        destructor Destroy; override;
+        property YouTubeObject: TYouTubeObject read FYouTubeObject;
+    end;
+
+{ TYouTubeObjectCollection }
+
+type
+    TYouTubeObjectsCollection = class(TCollection)
+    private
+        function GetItem (Index: Integer): TYouTubeObjectsItem;
+        procedure SetItem (Index: Integer; Value: TYouTubeObjectsItem);
+        function GetYouTubeObjectsItem (Value: string): TYouTubeObjectsItem;
+
+    public
+        constructor Create;
+        function AddObjectsItem: TYouTubeObjectsItem;
+        procedure DeleteObjectsItem (Value: string);
+        function FindYouTubeObjectsItemURL (AURL: string): TYouTubeObjectsItem;
+        { }
+        property Items[index: Integer]: TYouTubeObjectsItem read GetItem
+            write SetItem; default;
+        property YouTubeObjectsItem[Value: string]: TYouTubeObjectsItem
+            read GetYouTubeObjectsItem;
+    end;
+
+implementation
+
+{ TObjects }
+
+constructor TObjects.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otNone;
+    FTag := 0;
+end;
+
+destructor TObjects.Destroy;
+begin
+    inherited Destroy;
+end;
+
+{ TFile }
+
+constructor TFile.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otFile;
+    Clear;
+end;
+
+destructor TFile.Destroy;
+begin
+    StrDispose (FTaskName);
+    StrDispose (FFileName);
+    inherited Destroy;
+end;
+
+procedure TFile.Clear;
+begin
+    FileName := '';
+    TaskName := '';
+    FileDate := 0;
+    FileSize := 0;
+end;
+
+function TFile.GetFileName: string;
+begin
+    Result := StrPas (FFileName);
+end;
+
+procedure TFile.SetFileName (const Value: string);
+begin
+    if FFileName <> nil then
+        StrDispose (FFileName);
+    FFileName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FFileName, Value);
+end;
+
+function TFile.GetTaskName: string;
+begin
+    Result := StrPas (FTaskName);
+end;
+
+procedure TFile.SetTaskName (const Value: string);
+begin
+    if FTaskName <> nil then
+        StrDispose (FTaskName);
+    FTaskName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FTaskName, Value);
+end;
+
+{ TMailbox }
+
+constructor TMailbox.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otMailBox;
+    Clear;
+end;
+
+destructor TMailbox.Destroy;
+begin
+    StrDispose (FMailboxName);
+    inherited Destroy;
+end;
+
+procedure TMailbox.Clear;
+begin
+    MailboxName := '';
+end;
+
+function TMailbox.GetMailboxName: string;
+begin
+    Result := StrPas (FMailboxName);
+end;
+
+procedure TMailbox.SetMailboxName (const Value: string);
+begin
+    if FMailboxName <> nil then
+        StrDispose (FMailboxName);
+    FMailboxName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FMailboxName, Value);
+end;
+
+{ TFTPServer }
+
+constructor TFTPServer.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otFTPServer;
+    Clear;
+end;
+
+destructor TFTPServer.Destroy;
+begin
+    StrDispose (FFTPServerName);
+    inherited Destroy;
+end;
+
+procedure TFTPServer.Clear;
+begin
+    FTPServerName := '';
+end;
+
+function TFTPServer.GetFTPServerName: string;
+begin
+    Result := StrPas (FFTPServerName);
+end;
+
+procedure TFTPServer.SetFTPServerName (const Value: string);
+begin
+    if FFTPServerName <> nil then
+        StrDispose (FFTPServerName);
+    FFTPServerName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FFTPServerName, Value);
+end;
+
+{ TDirectory }
+
+constructor TDirectory.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otDirectory;
+    Clear;
+end;
+
+destructor TDirectory.Destroy;
+begin
+    StrDispose (FDirectoryName);
+    inherited Destroy;
+end;
+
+procedure TDirectory.Clear;
+begin
+    DirectoryName := '';
+    DirectoryDate := 0;
+end;
+
+function TDirectory.GetDirectoryName: string;
+begin
+    Result := StrPas (FDirectoryName);
+end;
+
+procedure TDirectory.SetDirectoryName (const Value: string);
+begin
+    if FDirectoryName <> nil then
+        StrDispose (FDirectoryName);
+    FDirectoryName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FDirectoryName, Value);
+end;
+
+{ TUser }
+
+constructor TUser.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    FTaskNames := TStringList.Create;
+    ObjectType := otUser;
+    Clear;
+end;
+
+destructor TUser.Destroy;
+begin
+    StrDispose (FUserName);
+    FTaskNames.Free;
+    inherited Destroy;
+end;
+
+procedure TUser.Clear;
+begin
+    FTaskNames.Clear;
+    UserName := '';
+end;
+
+function TUser.GetUserName: string;
+begin
+    Result := StrPas (FUserName);
+end;
+
+procedure TUser.SetUserName (const Value: string);
+begin
+    if FUserName <> nil then
+        StrDispose (FUserName);
+    FUserName := StrAlloc (Length(Value) + 1);
+    StrPCopy (FUserName, Value);
+end;
+
+{ TMonth }
+
+constructor TMonth.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otMonth;
+    Clear;
+end;
+
+destructor TMonth.Destroy;
+begin
+    inherited Destroy;
+end;
+
+procedure TMonth.Clear;
+begin
+    Month := 0;
+end;
+
+function TMonth.GetMonthName: string;
+begin
+    Result := sMonthName[FMonth];
+end;
+
+{ ------ }
+{ TEMail }
+{ ------ }
+
+constructor TEMail.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otEMail;
+    FList := TStringList.Create;
+    Clear;
+end;
+
+destructor TEMail.Destroy;
+begin
+    StrDispose (FEMail);
+    FList.Free;
+    inherited Destroy;
+end;
+
+procedure TEMail.Clear;
+begin
+    EMail[''] := '';
+    FList.Clear;
+end;
+
+procedure TEMail.WorkEMail (AddressType: string);
+var
+    DomenEMail: string;
+    i, j: Integer;
+    s, s1: string;
+    ts: TStringList;
+begin
+    FList.Clear;
+    s1 := EMail[''];
+    if s1 <> '' then
+    begin
+        if UpperCase (AddressType) = 'SMTP' then
+        begin
+            FList.Add (ExtractWordNew(1, s1, ['@']));
+            DomenEMail := ExtractWordNew (2, s1, ['@']);
+            j := WordCountNew (DomenEMail, ['.']);
+            for i := 1 to j do
+                FList.Add (ExtractWordNew(i, DomenEMail, ['.']));
+        end else if UpperCase (AddressType) = 'EX' then
+        begin
+            ts := TStringList.Create;
+            j := WordCountNew (s1, ['/', '=']);
+            i := 1;
+            ts.Add ('RU');
+            while i <= j do
+            begin
+                s := UpperCase (ExtractWordNew(i, s1, ['/', '=']));
+                if s = 'O' then
+                begin
+                    s := ExtractWordNew (i + 1, s1, ['/', '=']);
+                    ts.Add (s);
+                end else if s = 'OU' then
+                begin
+                    s := ExtractWordNew (i + 1, s1, ['/', '=']);
+                    ts.Add (s);
+                end else if s = 'CN' then
+                begin
+                    s := UpperCase (ExtractWordNew(i + 1, s1, ['/', '=']));
+                    if (s <> 'RECIPIENTS') then
+                        ts.Add (s);
+                end;
+                Inc (i);
+            end;
+
+            for i := ts.Count - 1 downto 0 do
+                FList.Add (ts.Strings[i]);
+            ts.Free;
+
+        end else begin
+            FList.Add (s1 + '(' + AddressType + ')');
+        end;
+    end;
+end;
+
+function TEMail.GetEMail (const AddressType: string): string;
+begin
+    Result := StrPas (FEMail);
+end;
+
+procedure TEMail.SetEMail (const AddressType, Value: string);
+begin
+    if FEMail <> nil then
+        StrDispose (FEMail);
+    FEMail := StrAlloc (Length(Value) + 1);
+    StrPCopy (FEMail, Value);
+    WorkEMail (AddressType);
+end;
+
+function TEMail.GetDomain (ADimention: Integer): string;
+var
+    i: Integer;
+begin
+    Result := '';
+    if List.Count > 0 then
+    begin
+        for i := List.Count - ADimention to List.Count - 1 do
+        begin
+            if i > 1 then
+                Result := Result + '.' + List.Strings[i]
+            else
+                Result := Result + List.Strings[i];
+        end;
+    end;
+end;
+
+function TEMail.GetDomainCount: Integer;
+begin
+    Result := List.Count - 1;
+end;
+
+function TEMail.GetUser: string;
+begin
+    Result := '';
+    if List.Count > 0 then
+    begin
+        Result := List.Strings[0];
+    end;
+end;
+
+{ -------------- }
+{ TYouTubeObject }
+{ -------------- }
+
+constructor TYouTubeObject.Create (AOwner: TComponent);
+begin
+    inherited Create (AOwner);
+    ObjectType := otYouTubeObject;
+    Clear;
+    // FYT := TazYouTubeApi.Create(Self);
+end;
+
+destructor TYouTubeObject.Destroy;
+begin
+    // FYT.Free;
+    StrDispose (FURL);
+    inherited Destroy;
+end;
+
+procedure TYouTubeObject.Clear;
+begin
+    URL := '';
+    ID := 0;
+    StopYouTubeBoolean := False;
+    ProgressMax := 0;
+    RxProgress := nil;
+    YoutubeThread := nil;
+end;
+
+function TYouTubeObject.GetURL: string;
+begin
+    Result := StrPas (FURL);
+end;
+
+procedure TYouTubeObject.SetURL (const Value: string);
+begin
+    if FURL <> nil then
+        StrDispose (FURL);
+    FURL := StrAlloc (Length(Value) + 1);
+    StrPCopy (FURL, Value);
+    // if URL <> '' then
+    // FInfo := FYT.Get(URL);
+end;
+
+{ TYouTubeObject.StartYouTube }
+
+procedure TYouTubeObject.StartYouTube;
+var
+    i: Integer;
+begin
+    FStopYouTubeBoolean := False;
+    { LRxProgress }
+    FRxProgress.Min := 0;
+    FRxProgress.Max := ProgressMax;
+    FRxProgress.Position := 0;
+    for i := 0 to FRxProgress.Max do
+    begin
+        if FStopYouTubeBoolean then
+        begin
+            Break;
+        end;
+        FRxProgress.Position := i;
+        FRxProgress.Update; // Make sure to repaint the progressbar
+        Sleep (cSleep);
+        Application.ProcessMessages;
+    end;
+    FRxProgress.Position := 0;
+    // SendMessage(progressbar1.Handle,PBM_SETMARQUEE,1,FDelay)
+end;
+
+{ TYouTubeObject.StopYouTube }
+
+procedure TYouTubeObject.StopYouTube;
+begin
+    FStopYouTubeBoolean := True;
+    FRxProgress.Position := 0;
+end;
+
+procedure TYouTubeObject.UpdateProgressBarThread (aProgress: Integer);
+begin
+    FRxProgress.Position := aProgress;
+    FRxProgress.Update; // Make sure to repaint the progressbar
+    if aProgress >= cProgressBarMax then
+    begin
+        // FYoutubeThread.FStopYouTubeBooleanThread := True;
+        FRxProgress.Position := 0;
+        FYoutubeThread := nil;
+        // FYoutubeThread.Free;
+    end;
+end;
+
+{ TYouTubeObject.StartYouTubeThread }
+
+procedure TYouTubeObject.StartYouTubeThread (aTerminateProc: TTerminateProc);
+begin
+    if not Assigned (FYoutubeThread) then
+    begin
+        // FYoutubeThread := TYoutubeThread.Create (UpdateProgressBarThread, False);
+        // CreateSuspended:= true
+        FYoutubeThread := TYoutubeThread.Create (UpdateProgressBarThread, True);
+        FYoutubeThread.Priority := tpNormal;
+        // Free FThread in the OnTerminate proc. This will set Terminated to true.
+        // FYoutubeThread.FreeOnTerminate := False;
+        FYoutubeThread.FreeOnTerminate := True;
+        FYoutubeThread.TerminateProc := aTerminateProc;
+        (*
+        Происходит после возврата метода Execute
+        потока и перед уничтожением потока.
+        *)
+        FYoutubeThread.OnTerminate := aTerminateProc;
+        FYoutubeThread.FObjectIDStr := GenerateObjectIDStr (ID);
+        FYoutubeThread.FStopYouTubeBooleanThread := False;
+        FYoutubeThread.Start ();
+    end;
+end;
+
+{ TYouTubeObject.StopYouTubeThread }
+
+procedure TYouTubeObject.StopYouTubeThread;
+begin
+    FYoutubeThread.FStopYouTubeBooleanThread := True;
+    FRxProgress.Position := 0;
+    FYoutubeThread := nil;
+end;
+
+{ -------------- }
+{ TYoutubeThread }
+{ -------------- }
+
+{ TYoutubeThread.Execute }
+
+procedure TYoutubeThread.Execute;
+var
+    i: Integer;
+begin
+    for i := 0 to cProgressBarMax do
+    begin
+        if FStopYouTubeBooleanThread then
+        begin
+            { Подает сигнал потоку о завершении, }
+            { устанавливая для свойства Terminated значение true. }
+            Terminate;
+            Break;
+        end;
+        Progress (i);
+        Sleep (cSleep);
+        Application.ProcessMessages;
+    end;
+end;
+
+{ -------------- }
+{ TObjectsItem }
+{ -------------- }
+
+constructor TObjectsItem.Create (AOwner: TCollection);
+begin
+    inherited Create (AOwner);
+    FObjects := TObjects.Create (nil);
+end;
+
+destructor TObjectsItem.Destroy;
+begin
+    FObjects.Free;
+    inherited Destroy;
+end;
+
+{ ------------------ }
+{ TObjectsCollection }
+{ ------------------ }
+
+constructor TObjectsCollection.Create;
+begin
+    inherited Create (TObjectsItem);
+end;
+
+function TObjectsCollection.Add: TObjectsItem;
+begin
+    Result := TObjectsItem (inherited Add);
+end;
+
+function TObjectsCollection.GetItem (Index: Integer): TObjectsItem;
+begin
+    Result := TObjectsItem (inherited Items[index]);
+end;
+
+procedure TObjectsCollection.SetItem (Index: Integer; Value: TObjectsItem);
+begin
+    Items[index].Assign (Value);
+end;
+
+function TObjectsCollection.GetObjects (Value: string): TObjects;
+begin
+    { Поиск Objects по Value }
+    Result := nil;
+end;
+
+{ ------------------- }
+{ TYouTubeObjectsItem }
+{ ------------------- }
+
+{ TYouTubeObjectsItem.Create }
+
+constructor TYouTubeObjectsItem.Create (AOwner: TCollection);
+begin
+    inherited Create (AOwner);
+    FYouTubeObject := TYouTubeObject.Create (nil);
+end;
+
+{ TYouTubeObjectsItem.Destroy }
+
+destructor TYouTubeObjectsItem.Destroy;
+begin
+    FYouTubeObject.Free;
+    inherited Destroy;
+end;
+
+{ ------------------------- }
+{ TYouTubeObjectsCollection }
+{ ------------------------- }
+
+{ TYouTubeObjectsCollection.Create }
+
+constructor TYouTubeObjectsCollection.Create;
+begin
+    inherited Create (TYouTubeObjectsItem);
+end;
+
+{ TYouTubeObjectsCollection.AddObjectsItem }
+
+function TYouTubeObjectsCollection.AddObjectsItem: TYouTubeObjectsItem;
+begin
+    Result := TYouTubeObjectsItem (inherited Add);
+end;
+
+{ TYouTubeObjectsCollection.GetItem }
+
+function TYouTubeObjectsCollection.GetItem (Index: Integer)
+    : TYouTubeObjectsItem;
+begin
+    Result := TYouTubeObjectsItem (inherited Items[index]);
+end;
+
+{ TYouTubeObjectsCollection.SetItem }
+
+procedure TYouTubeObjectsCollection.SetItem (Index: Integer;
+    Value: TYouTubeObjectsItem);
+begin
+    Items[index].Assign (Value);
+end;
+
+{ TYouTubeObjectsCollection.GetYouTubeObjectsItem }
+
+function TYouTubeObjectsCollection.GetYouTubeObjectsItem (Value: string)
+    : TYouTubeObjectsItem;
+var
+    i: Integer;
+    LID: TDateTime;
+    LObjectIDStr: string;
+begin
+    { Поиск Objects по Value }
+    Result := nil;
+    for i := 0 to Count - 1 do
+    begin
+        LID := Items[i].YouTubeObject.ID;
+        LObjectIDStr := GenerateObjectIDStr (LID);
+        if LObjectIDStr = Value then
+        begin
+            Result := Items[i];
+            Break;
+        end;
+    end;
+end;
+
+{ TYouTubeObjectsCollection.DeleteObjectsItem }
+
+procedure TYouTubeObjectsCollection.DeleteObjectsItem (Value: string);
+var
+    LYouTubeObjectsItem: TYouTubeObjectsItem;
+begin
+    LYouTubeObjectsItem := YouTubeObjectsItem[Value];
+    LYouTubeObjectsItem.Free;
+end;
+
+{ TYouTubeObjectsCollection.FindYouTubeObjectsItemURL }
+
+function TYouTubeObjectsCollection.FindYouTubeObjectsItemURL (AURL: string)
+    : TYouTubeObjectsItem;
+var
+    i: Integer;
+    LURL: string;
+begin
+    { Поиск Objects по AURL }
+    Result := nil;
+    for i := 0 to Count - 1 do
+    begin
+        LURL := Items[i].YouTubeObject.FURL;
+        if LURL = AURL then
+        begin
+            Result := Items[i];
+            Break;
+        end;
+    end;
+end;
+
+end.

@@ -1,0 +1,10 @@
+; This contents file was created with HelpScribble 5.2.0
+; Registered to: 
+
+:BASE wcimgcbo.hlp
+:TITLE Watt Computers Help
+1 Introduction=Scribble10>main
+1 Installation Guide=Scribble20>main
+1 Revision History=Scribble1000>main
+1 Components
+2 TImageComboBox=Scribble30>main

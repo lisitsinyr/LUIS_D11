@@ -1,0 +1,79 @@
+(* Not defined  NWLGAvailableNetDrive;  StdCall; external 'lgnw9532.dll' index 74;  *)
+function NWLGBringLoginToFront;  StdCall; external 'lgnw9532.dll' index 77;
+function NWLGDefaultEvtHandler;  StdCall; external 'lgnw9532.dll' index 6;
+function NWLGDefaultExcptHandler;  StdCall; external 'lgnw9532.dll' index 7;
+(* Not defined  NWLGDeleteDriveFromPath;  StdCall; external 'lgnw9532.dll' index 73;  *)
+function NWLGEVTSend;  StdCall; external 'lgnw9532.dll' index 76;
+function NWLGGetLoginData;  StdCall; external 'lgnw9532.dll' index 4;
+(* Not defined  NWLGGetMessageString;  StdCall; external 'lgnw9532.dll' index 75;  *)
+(* Not defined  NWLGGetSearchOrderFromDrive;  StdCall; external 'lgnw9532.dll' index 72;  *)
+function NWLGLoginExtRegDelete;  StdCall; external 'lgnw9532.dll' index 60;
+function NWLGLoginExtRegGet;  StdCall; external 'lgnw9532.dll' index 58;
+// function NWLGLoginExtRegOpen;  StdCall; external 'lgnw9532.dll' index 57;
+function NWLGLoginExtRegWrite;  StdCall; external 'lgnw9532.dll' index 59;
+(* Not defined  NWLGMapAddToPath;  StdCall; external 'lgnw9532.dll' index 71;  *)
+function NWLGOpenScriptFD;  StdCall; external 'lgnw9532.dll' index 11;
+procedure NWLGSetCtrlBreak;  StdCall; external 'lgnw9532.dll' index 12;
+function NWLGSetLoginData;  StdCall; external 'lgnw9532.dll' index 5;
+(* Not defined  NWLGprintf;  StdCall; external 'lgnw9532.dll' index 69;  *)
+function NWLogin;  StdCall; external 'lgnw9532.dll' index 2;
+function NWLoginExtInit;  StdCall; external 'lgnw9532.dll' index 29;
+function NWLoginInit;  StdCall; external 'lgnw9532.dll' index 1;
+function NWLoginTerm;  StdCall; external 'lgnw9532.dll' index 3;
+function NWLoginUI;  StdCall; external 'lgnw9532.dll' index 80;
+procedure NWLoginVersion;  StdCall; external 'lgnw9532.dll' index 36;
+(* Not defined  NWSRAddDrive;  StdCall; external 'lgnw9532.dll' index 18;  *)
+(* Not defined  NWSRAuthConn;  StdCall; external 'lgnw9532.dll' index 19;  *)
+(* Not defined  NWSRAvailableNetDrive;  StdCall; external 'lgnw9532.dll' index 20;  *)
+(* Not defined  NWSRChangeContext;  StdCall; external 'lgnw9532.dll' index 21;  *)
+(* Not defined  NWSRChangeDrive;  StdCall; external 'lgnw9532.dll' index 22;  *)
+(* Not defined  NWSRClearScreen;  StdCall; external 'lgnw9532.dll' index 23;  *)
+(* Not defined  NWSRCreateContext;  StdCall; external 'lgnw9532.dll' index 53;  *)
+(* Not defined  NWSRDOSBreakCommand;  StdCall; external 'lgnw9532.dll' index 25;  *)
+(* Not defined  NWSRDOSSetCommand;  StdCall; external 'lgnw9532.dll' index 26;  *)
+(* Not defined  NWSRDisplayImage;  StdCall; external 'lgnw9532.dll' index 24;  *)
+(* Not defined  NWSRFindLangFile;  StdCall; external 'lgnw9532.dll' index 15;  *)
+(* Not defined  NWSRGetCurrentTree;  StdCall; external 'lgnw9532.dll' index 27;  *)
+(* Not defined  NWSRGetLastLoginTime;  StdCall; external 'lgnw9532.dll' index 28;  *)
+(* Not defined  NWSRGetSrvcConn;  StdCall; external 'lgnw9532.dll' index 30;  *)
+(* Not defined  NWSRGetVolObjName;  StdCall; external 'lgnw9532.dll' index 31;  *)
+(* Not defined  NWSRIOChangePwd;  StdCall; external 'lgnw9532.dll' index 32;  *)
+(* Not defined  NWSRIOConfirmReattach;  StdCall; external 'lgnw9532.dll' index 16;  *)
+(* Not defined  NWSRIODispAllDrives;  StdCall; external 'lgnw9532.dll' index 33;  *)
+(* Not defined  NWSRIODispDrive;  StdCall; external 'lgnw9532.dll' index 34;  *)
+(* Not defined  NWSRIODispError;  StdCall; external 'lgnw9532.dll' index 35;  *)
+(* Not defined  NWSRIODispPause;  StdCall; external 'lgnw9532.dll' index 37;  *)
+(* Not defined  NWSRIODispText;  StdCall; external 'lgnw9532.dll' index 38;  *)
+(* Not defined  NWSRIODispTextFile;  StdCall; external 'lgnw9532.dll' index 39;  *)
+(* Not defined  NWSRIOPlaySound;  StdCall; external 'lgnw9532.dll' index 42;  *)
+(* Not defined  NWSRIsGroupMember;  StdCall; external 'lgnw9532.dll' index 43;  *)
+(* Not defined  NWSRIsLoggedIn;  StdCall; external 'lgnw9532.dll' index 44;  *)
+(* Not defined  NWSRIsVLMConn;  StdCall; external 'lgnw9532.dll' index 45;  *)
+(* Not defined  NWSRMachineNameCommand;  StdCall; external 'lgnw9532.dll' index 46;  *)
+(* Not defined  NWSRNDSLoaded;  StdCall; external 'lgnw9532.dll' index 47;  *)
+(* Not defined  NWSRNetStatus;  StdCall; external 'lgnw9532.dll' index 41;  *)
+(* Not defined  NWSROpenStdScript;  StdCall; external 'lgnw9532.dll' index 50;  *)
+(* Not defined  NWSRReadAttribute;  StdCall; external 'lgnw9532.dll' index 51;  *)
+(* Not defined  NWSRResolveAndConnect;  StdCall; external 'lgnw9532.dll' index 52;  *)
+(* Not defined  NWSRTransEscString;  StdCall; external 'lgnw9532.dll' index 55;  *)
+(* Not defined  NWTLFindFirst;  StdCall; external 'lgnw9532.dll' index 13;  *)
+(* Not defined  NWTLFindNext;  StdCall; external 'lgnw9532.dll' index 14;  *)
+(* Not defined  NWTLGetTreeContextPair;  StdCall; external 'lgnw9532.dll' index 49;  *)
+(* Not defined  NWTLNWToUNCPath;  StdCall; external 'lgnw9532.dll' index 48;  *)
+(* Not defined  NWTLSetTreeContextPair;  StdCall; external 'lgnw9532.dll' index 54;  *)
+(* Not defined  NWTLTrimTreeName;  StdCall; external 'lgnw9532.dll' index 56;  *)
+(* Not defined  NWTLUNCToNWPath;  StdCall; external 'lgnw9532.dll' index 40;  *)
+(* Not defined  NWUTCleanMapPath;  StdCall; external 'lgnw9532.dll' index 68;  *)
+(* Not defined  _NWLGCompressLine;  StdCall; external 'lgnw9532.dll' index 64;  *)
+(* Not defined  _NWLGExpandCmdLineArgs;  StdCall; external 'lgnw9532.dll' index 63;  *)
+(* Not defined  _NWLGGetServiceConnection;  StdCall; external 'lgnw9532.dll' index 65;  *)
+(* Not defined  _NWLGInitMsg;  StdCall; external 'lgnw9532.dll' index 17;  *)
+(* Not defined  _NWLGInitNetworkIdentifiers;  StdCall; external 'lgnw9532.dll' index 62;  *)
+(* Not defined  _NWLGInitialization;  StdCall; external 'lgnw9532.dll' index 8;  *)
+(* Not defined  _NWLGLogoutFromServers;  StdCall; external 'lgnw9532.dll' index 67;  *)
+(* Not defined  _NWLGParseCommandLine;  StdCall; external 'lgnw9532.dll' index 9;  *)
+(* Not defined  _NWLGParseLine;  StdCall; external 'lgnw9532.dll' index 61;  *)
+(* Not defined  _NWLGReportScriptError;  StdCall; external 'lgnw9532.dll' index 66;  *)
+(* Not defined  _NWLGSetAccess;  StdCall; external 'lgnw9532.dll' index 10;  *)
+(* Not defined  _NWLoginUI;  StdCall; external 'lgnw9532.dll' index 70;  *)
+

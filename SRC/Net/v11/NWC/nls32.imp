@@ -1,0 +1,8 @@
+(* Not defined  LSEnumProviders;  StdCall; external 'nls32.dll' index 7;  *)
+(* Not defined  LSFreeHandle;  StdCall; external 'nls32.dll' index 5;  *)
+(* Not defined  LSGetMessage;  StdCall; external 'nls32.dll' index 6;  *)
+(* Not defined  LSQuery;  StdCall; external 'nls32.dll' index 4;  *)
+(* Not defined  LSRelease;  StdCall; external 'nls32.dll' index 2;  *)
+(* Not defined  LSRequest;  StdCall; external 'nls32.dll' index 1;  *)
+(* Not defined  LSUpdate;  StdCall; external 'nls32.dll' index 3;  *)
+

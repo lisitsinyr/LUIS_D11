@@ -1,0 +1,470 @@
+(* Not defined  CheckPathAtRoot;  StdCall; external 'calwin32.dll' index 477;  *)
+(* Not defined  CleanPath;  StdCall; external 'calwin32.dll' index 189;  *)
+(* Not defined  ConvertNWQueueToQueue;  StdCall; external 'calwin32.dll' index 460;  *)
+(* Not defined  ConvertQueueToNWQueue;  StdCall; external 'calwin32.dll' index 461;  *)
+(* Not defined  Encode;  StdCall; external 'calwin32.dll' index 532;  *)
+(* Not defined  Encrypt;  StdCall; external 'calwin32.dll' index 533;  *)
+(* Not defined  EncryptPassword;  StdCall; external 'calwin32.dll' index 534;  *)
+(* Not defined  GetLoginKey;  StdCall; external 'calwin32.dll' index 535;  *)
+(* Not defined  GetPasswordKey;  StdCall; external 'calwin32.dll' index 536;  *)
+(* Not defined  IndexPath;  StdCall; external 'calwin32.dll' index 191;  *)
+function NWAFPASCIIZToLenStr;  StdCall; external 'calwin32.dll' index 462;
+function NWAFPAllocTemporaryDirHandle;  StdCall; external 'calwin32.dll' index 250;
+function NWAFPCreateDirectory;  StdCall; external 'calwin32.dll' index 251;
+function NWAFPCreateFile;  StdCall; external 'calwin32.dll' index 311;
+function NWAFPDelete;  StdCall; external 'calwin32.dll' index 252;
+function NWAFPDirectoryEntry;  StdCall; external 'calwin32.dll' index 253;
+function NWAFPGetEntryIDFromHandle;  StdCall; external 'calwin32.dll' index 254;
+function NWAFPGetEntryIDFromName;  StdCall; external 'calwin32.dll' index 255;
+function NWAFPGetEntryIDFromPathName;  StdCall; external 'calwin32.dll' index 256;
+function NWAFPGetFileInformation;  StdCall; external 'calwin32.dll' index 257;
+function NWAFPOpenFileFork;  StdCall; external 'calwin32.dll' index 258;
+function NWAFPRename;  StdCall; external 'calwin32.dll' index 259;
+function NWAFPScanFileInformation;  StdCall; external 'calwin32.dll' index 260;
+function NWAFPSetFileInformation;  StdCall; external 'calwin32.dll' index 261;
+function NWAFPSupported;  StdCall; external 'calwin32.dll' index 262;
+function NWAbortServicingQueueJob;  StdCall; external 'calwin32.dll' index 70;
+function NWAbortServicingQueueJob2;  StdCall; external 'calwin32.dll' index 231;
+function NWAddObjectToSet;  StdCall; external 'calwin32.dll' index 21;
+function NWAddTrustee;  StdCall; external 'calwin32.dll' index 249;
+function NWAddTrusteeToDirectory;  StdCall; external 'calwin32.dll' index 76;
+function NWAllocPermanentDirectoryHandle;  StdCall; external 'calwin32.dll' index 354;
+function NWAllocTempNSDirHandle;  StdCall; external 'calwin32.dll' index 263;
+function NWAllocTempNSDirHandle2;  StdCall; external 'calwin32.dll' index 396;
+function NWAllocTemporaryDirectoryHandle;  StdCall; external 'calwin32.dll' index 83;
+function NWAttachQueueServerToQueue;  StdCall; external 'calwin32.dll' index 66;
+function NWAttachToFileServer;  StdCall; external 'calwin32.dll' index 2;
+function NWAttachToFileServerByConn;  StdCall; external 'calwin32.dll' index 179;
+function NWBroadcastToConsole;  StdCall; external 'calwin32.dll' index 124;
+function NWCallsInit;  StdCall; external 'calwin32.dll' index 377;
+function NWCallsTerm;  StdCall; external 'calwin32.dll' index 522;
+function NWCancelCapture;  StdCall; external 'calwin32.dll' index 443;
+function NWChangeObjectPassword;  StdCall; external 'calwin32.dll' index 18;
+function NWChangeObjectSecurity;  StdCall; external 'calwin32.dll' index 35;
+function NWChangePropertySecurity;  StdCall; external 'calwin32.dll' index 31;
+function NWChangeQueueJobEntry;  StdCall; external 'calwin32.dll' index 63;
+function NWChangeQueueJobEntry2;  StdCall; external 'calwin32.dll' index 232;
+function NWChangeQueueJobPosition;  StdCall; external 'calwin32.dll' index 64;
+function NWChangeQueueJobPosition2;  StdCall; external 'calwin32.dll' index 233;
+function NWChangeToClientRights;  StdCall; external 'calwin32.dll' index 71;
+function NWChangeToClientRights2;  StdCall; external 'calwin32.dll' index 234;
+function NWCheckConsolePrivileges;  StdCall; external 'calwin32.dll' index 332;
+function NWCheckNetWareVersion;  StdCall; external 'calwin32.dll' index 333;
+function NWClearConnectionNumber;  StdCall; external 'calwin32.dll' index 334;
+function NWClearFileLock2;  StdCall; external 'calwin32.dll' index 393;
+function NWClearFileLockSet;  StdCall; external 'calwin32.dll' index 135;
+function NWClearLogicalRecord;  StdCall; external 'calwin32.dll' index 143;
+function NWClearLogicalRecordSet;  StdCall; external 'calwin32.dll' index 141;
+function NWClearPhysicalRecord;  StdCall; external 'calwin32.dll' index 131;
+function NWClearPhysicalRecordSet;  StdCall; external 'calwin32.dll' index 129;
+function NWCloseBindery;  StdCall; external 'calwin32.dll' index 37;
+function NWCloseEA;  StdCall; external 'calwin32.dll' index 264;
+function NWCloseFile;  StdCall; external 'calwin32.dll' index 198;
+function NWCloseFileAndAbortQueueJob;  StdCall; external 'calwin32.dll' index 53;
+function NWCloseFileAndAbortQueueJob2;  StdCall; external 'calwin32.dll' index 235;
+function NWCloseFileAndStartQueueJob;  StdCall; external 'calwin32.dll' index 52;
+function NWCloseFileAndStartQueueJob2;  StdCall; external 'calwin32.dll' index 236;
+function NWCloseSemaphore;  StdCall; external 'calwin32.dll' index 102;
+(* Not defined  NWConvertAndAugment;  StdCall; external 'calwin32.dll' index 398;  *)
+procedure NWConvertDate;  StdCall; external 'calwin32.dll' index 508;
+procedure NWConvertDateTime;  StdCall; external 'calwin32.dll' index 510;
+function NWConvertFileHandle;  StdCall; external 'calwin32.dll' index 512;
+function NWConvertFileHandleConnRef;  StdCall; external 'calwin32.dll' index 525;
+function NWConvertHandle;  StdCall; external 'calwin32.dll' index 197;
+function NWConvertPathToDirEntry;  StdCall; external 'calwin32.dll' index 304;
+procedure NWConvertTime;  StdCall; external 'calwin32.dll' index 509;
+(* Not defined  NWConvertToSpecChar;  StdCall; external 'calwin32.dll' index 399;  *)
+function NWCreateDirectory;  StdCall; external 'calwin32.dll' index 157;
+function NWCreateObject;  StdCall; external 'calwin32.dll' index 32;
+function NWCreateProperty;  StdCall; external 'calwin32.dll' index 29;
+function NWCreateQueue;  StdCall; external 'calwin32.dll' index 59;
+function NWCreateQueueFile;  StdCall; external 'calwin32.dll' index 51;
+function NWCreateQueueFile2;  StdCall; external 'calwin32.dll' index 237;
+function NWCreateUNCPath;  StdCall; external 'calwin32.dll' index 527;
+function NWDeallocateDirectoryHandle;  StdCall; external 'calwin32.dll' index 84;
+function NWDeleteDirectory;  StdCall; external 'calwin32.dll' index 158;
+function NWDeleteDriveBase;  StdCall; external 'calwin32.dll' index 12;
+function NWDeleteNSEntry;  StdCall; external 'calwin32.dll' index 562;
+function NWDeleteObject;  StdCall; external 'calwin32.dll' index 33;
+function NWDeleteObjectFromSet;  StdCall; external 'calwin32.dll' index 22;
+function NWDeleteProperty;  StdCall; external 'calwin32.dll' index 30;
+function NWDeleteTrustee;  StdCall; external 'calwin32.dll' index 265;
+function NWDeleteTrusteeFromDirectory;  StdCall; external 'calwin32.dll' index 77;
+function NWDestroyQueue;  StdCall; external 'calwin32.dll' index 60;
+function NWDetachFromFileServer;  StdCall; external 'calwin32.dll' index 3;
+function NWDetachQueueServerFromQueue;  StdCall; external 'calwin32.dll' index 67;
+function NWDisableBroadcasts;  StdCall; external 'calwin32.dll' index 192;
+function NWDisableFileServerLogin;  StdCall; external 'calwin32.dll' index 335;
+function NWDisableTTS;  StdCall; external 'calwin32.dll' index 336;
+function NWDisallowObjectPassword;  StdCall; external 'calwin32.dll' index 164;
+(* Not defined  NWDosClose;  StdCall; external 'calwin32.dll' index 463;  *)
+(* Not defined  NWDosOpen;  StdCall; external 'calwin32.dll' index 464;  *)
+function NWDownFileServer;  StdCall; external 'calwin32.dll' index 337;
+function NWEnableBroadcasts;  StdCall; external 'calwin32.dll' index 193;
+function NWEnableFileServerLogin;  StdCall; external 'calwin32.dll' index 338;
+function NWEnableTTS;  StdCall; external 'calwin32.dll' index 339;
+function NWEndCapture;  StdCall; external 'calwin32.dll' index 444;
+(* Not defined  NWEraseFiles;  StdCall; external 'calwin32.dll' index 161;  *)
+function NWExamineSemaphore;  StdCall; external 'calwin32.dll' index 99;
+function NWFileSearchInitialize;  StdCall; external 'calwin32.dll' index 165;
+function NWFileServerFileCopy;  StdCall; external 'calwin32.dll' index 107;
+function NWFindFirstEA;  StdCall; external 'calwin32.dll' index 266;
+function NWFindNextEA;  StdCall; external 'calwin32.dll' index 267;
+function NWFinishServicingQueueJob;  StdCall; external 'calwin32.dll' index 69;
+function NWFinishServicingQueueJob2;  StdCall; external 'calwin32.dll' index 238;
+function NWFlushCapture;  StdCall; external 'calwin32.dll' index 445;
+function NWFragNCPExtensionRequest;  StdCall; external 'calwin32.dll' index 472;
+function NWGetAccountStatus;  StdCall; external 'calwin32.dll' index 355;
+function NWGetActiveConnListByType;  StdCall; external 'calwin32.dll' index 400;
+function NWGetActiveLANBoardList;  StdCall; external 'calwin32.dll' index 401;
+function NWGetActiveProtocolStacks;  StdCall; external 'calwin32.dll' index 402;
+function NWGetBannerUserName;  StdCall; external 'calwin32.dll' index 446;
+function NWGetBinderyAccessLevel;  StdCall; external 'calwin32.dll' index 28;
+function NWGetBroadcastMessage;  StdCall; external 'calwin32.dll' index 178;
+function NWGetBroadcastMode;  StdCall; external 'calwin32.dll' index 122;
+function NWGetCPUInfo;  StdCall; external 'calwin32.dll' index 404;
+function NWGetCacheInfo;  StdCall; external 'calwin32.dll' index 403;
+function NWGetCaptureFlags;  StdCall; external 'calwin32.dll' index 447;
+function NWGetCaptureFlagsConnRef;  StdCall; external 'calwin32.dll' index 455;
+function NWGetCaptureStatus;  StdCall; external 'calwin32.dll' index 448;
+function NWGetClientType;  StdCall; external 'calwin32.dll' index 560;
+function NWGetConnInfo;  StdCall; external 'calwin32.dll' index 518;
+function NWGetConnListFromObject;  StdCall; external 'calwin32.dll' index 498;
+function NWGetConnectionHandle;  StdCall; external 'calwin32.dll' index 212;
+function NWGetConnectionInformation;  StdCall; external 'calwin32.dll' index 115;
+function NWGetConnectionList;  StdCall; external 'calwin32.dll' index 5;
+function NWGetConnectionNumber;  StdCall; external 'calwin32.dll' index 8;
+function NWGetConnectionStatus;  StdCall; external 'calwin32.dll' index 6;
+function NWGetConnectionUsageStats;  StdCall; external 'calwin32.dll' index 340;
+function NWGetDMFileInfo;  StdCall; external 'calwin32.dll' index 408;
+function NWGetDMVolumeInfo;  StdCall; external 'calwin32.dll' index 409;
+function NWGetDataMigratorInfo;  StdCall; external 'calwin32.dll' index 405;
+function NWGetDefaultConnRef;  StdCall; external 'calwin32.dll' index 50;
+function NWGetDefaultConnectionID;  StdCall; external 'calwin32.dll' index 9;
+function NWGetDefaultSupportModule;  StdCall; external 'calwin32.dll' index 406;
+function NWGetDirCacheInfo;  StdCall; external 'calwin32.dll' index 407;
+function NWGetDirSpaceInfo;  StdCall; external 'calwin32.dll' index 331;
+function NWGetDirSpaceLimitList;  StdCall; external 'calwin32.dll' index 330;
+function NWGetDirectoryBase;  StdCall; external 'calwin32.dll' index 268;
+function NWGetDirectoryEntryNumber;  StdCall; external 'calwin32.dll' index 592;
+function NWGetDirectoryHandlePath;  StdCall; external 'calwin32.dll' index 86;
+function NWGetDiskCacheStats;  StdCall; external 'calwin32.dll' index 342;
+function NWGetDiskChannelStats;  StdCall; external 'calwin32.dll' index 343;
+function NWGetDiskUtilization;  StdCall; external 'calwin32.dll' index 345;
+function NWGetDriveInfoConnRef;  StdCall; external 'calwin32.dll' index 39;
+function NWGetDriveInformation;  StdCall; external 'calwin32.dll' index 13;
+function NWGetDrivePath;  StdCall; external 'calwin32.dll' index 156;
+function NWGetDrivePathConnRef;  StdCall; external 'calwin32.dll' index 167;
+function NWGetDriveStatus;  StdCall; external 'calwin32.dll' index 513;
+function NWGetDriveStatusConnRef;  StdCall; external 'calwin32.dll' index 524;
+function NWGetEAHandleStruct;  StdCall; external 'calwin32.dll' index 269;
+function NWGetEffectiveDirectoryRights;  StdCall; external 'calwin32.dll' index 78;
+function NWGetEffectiveRights;  StdCall; external 'calwin32.dll' index 270;
+function NWGetExtendedFileAttributes2;  StdCall; external 'calwin32.dll' index 302;
+function NWGetExtendedVolumeInfo;  StdCall; external 'calwin32.dll' index 390;
+function NWGetFSDriveMapTable;  StdCall; external 'calwin32.dll' index 341;
+function NWGetFSLANDriverConfigInfo;  StdCall; external 'calwin32.dll' index 349;
+function NWGetFileConnRef;  StdCall; external 'calwin32.dll' index 132;
+function NWGetFileConnectionID;  StdCall; external 'calwin32.dll' index 114;
+function NWGetFileDirEntryNumber;  StdCall; external 'calwin32.dll' index 591;
+function NWGetFileServerDateAndTime;  StdCall; external 'calwin32.dll' index 116;
+function NWGetFileServerDescription;  StdCall; external 'calwin32.dll' index 74;
+function NWGetFileServerExtendedInfo;  StdCall; external 'calwin32.dll' index 120;
+function NWGetFileServerInfo;  StdCall; external 'calwin32.dll' index 410;
+function NWGetFileServerInformation;  StdCall; external 'calwin32.dll' index 119;
+function NWGetFileServerLANIOStats;  StdCall; external 'calwin32.dll' index 177;
+function NWGetFileServerLoginStatus;  StdCall; external 'calwin32.dll' index 347;
+function NWGetFileServerMiscInfo;  StdCall; external 'calwin32.dll' index 528;
+function NWGetFileServerName;  StdCall; external 'calwin32.dll' index 7;
+(* Not defined  NWGetFileServerType;  StdCall; external 'calwin32.dll' index 175;  *)
+function NWGetFileServerVersion;  StdCall; external 'calwin32.dll' index 306;
+function NWGetFileServerVersionInfo;  StdCall; external 'calwin32.dll' index 348;
+function NWGetFileSystemStats;  StdCall; external 'calwin32.dll' index 346;
+function NWGetFirstDrive;  StdCall; external 'calwin32.dll' index 181;
+function NWGetGarbageCollectionInfo;  StdCall; external 'calwin32.dll' index 411;
+function NWGetGeneralRouterAndSAPInfo;  StdCall; external 'calwin32.dll' index 489;
+function NWGetIPXSPXInfo;  StdCall; external 'calwin32.dll' index 412;
+function NWGetInetAddr;  StdCall; external 'calwin32.dll' index 520;
+function NWGetInternetAddress;  StdCall; external 'calwin32.dll' index 118;
+function NWGetKnownNetworksInfo;  StdCall; external 'calwin32.dll' index 490;
+function NWGetKnownServersInfo;  StdCall; external 'calwin32.dll' index 495;
+function NWGetLANCommonCountersInfo;  StdCall; external 'calwin32.dll' index 413;
+function NWGetLANConfigInfo;  StdCall; external 'calwin32.dll' index 414;
+function NWGetLANCustomCountersInfo;  StdCall; external 'calwin32.dll' index 416;
+function NWGetLSLInfo;  StdCall; external 'calwin32.dll' index 418;
+function NWGetLSLLogicalBoardStats;  StdCall; external 'calwin32.dll' index 419;
+function NWGetLoadedMediaNumList;  StdCall; external 'calwin32.dll' index 417;
+(* Not defined  NWGetLoginPasswordKey;  StdCall; external 'calwin32.dll' index 537;  *)
+function NWGetLongName;  StdCall; external 'calwin32.dll' index 271;
+function NWGetMaxPrinters;  StdCall; external 'calwin32.dll' index 454;
+procedure NWGetMaximumConnections;  StdCall; external 'calwin32.dll' index 1;
+function NWGetMediaMgrObjChildrenList;  StdCall; external 'calwin32.dll' index 420;
+function NWGetMediaMgrObjInfo;  StdCall; external 'calwin32.dll' index 421;
+function NWGetMediaMgrObjList;  StdCall; external 'calwin32.dll' index 422;
+function NWGetMediaNameByMediaNum;  StdCall; external 'calwin32.dll' index 423;
+function NWGetNCPExtensionInfo;  StdCall; external 'calwin32.dll' index 469;
+function NWGetNCPExtensionInfoByName;  StdCall; external 'calwin32.dll' index 500;
+function NWGetNCPExtensionsList;  StdCall; external 'calwin32.dll' index 501;
+function NWGetNLMInfo;  StdCall; external 'calwin32.dll' index 425;
+function NWGetNLMLoadedList;  StdCall; external 'calwin32.dll' index 426;
+function NWGetNLMsResourceTagList;  StdCall; external 'calwin32.dll' index 427;
+function NWGetNSEntryInfo;  StdCall; external 'calwin32.dll' index 273;
+function NWGetNSFileDirEntryNumber;  StdCall; external 'calwin32.dll' index 593;
+function NWGetNSInfo;  StdCall; external 'calwin32.dll' index 274;
+function NWGetNSLoadedList;  StdCall; external 'calwin32.dll' index 275;
+function NWGetNSPath;  StdCall; external 'calwin32.dll' index 276;
+procedure NWGetNWCallsVersion;  StdCall; external 'calwin32.dll' index 442;
+function NWGetNetWareFileSystemsInfo;  StdCall; external 'calwin32.dll' index 424;
+function NWGetNetworkRouterInfo;  StdCall; external 'calwin32.dll' index 491;
+function NWGetNetworkRoutersInfo;  StdCall; external 'calwin32.dll' index 492;
+function NWGetNetworkSerialNumber;  StdCall; external 'calwin32.dll' index 529;
+function NWGetNumberNCPExtensions;  StdCall; external 'calwin32.dll' index 502;
+function NWGetOSVersionInfo;  StdCall; external 'calwin32.dll' index 428;
+function NWGetObjDiskRestrictions;  StdCall; external 'calwin32.dll' index 310;
+function NWGetObjectConnectionNumbers;  StdCall; external 'calwin32.dll' index 117;
+function NWGetObjectDiskSpaceLeft;  StdCall; external 'calwin32.dll' index 344;
+function NWGetObjectEffectiveRights;  StdCall; external 'calwin32.dll' index 389;
+function NWGetObjectEffectiveRights2;  StdCall; external 'calwin32.dll' index 590;
+function NWGetObjectID;  StdCall; external 'calwin32.dll' index 25;
+function NWGetObjectName;  StdCall; external 'calwin32.dll' index 26;
+function NWGetOwningNameSpace;  StdCall; external 'calwin32.dll' index 277;
+function NWGetPacketBurstInfo;  StdCall; external 'calwin32.dll' index 429;
+function NWGetPathFromDirectoryBase;  StdCall; external 'calwin32.dll' index 539;
+function NWGetPathFromDirectoryEntry;  StdCall; external 'calwin32.dll' index 351;
+function NWGetPhysicalDiskStats;  StdCall; external 'calwin32.dll' index 350;
+function NWGetPrimaryConnectionID;  StdCall; external 'calwin32.dll' index 15;
+function NWGetPrinterQueueID;  StdCall; external 'calwin32.dll' index 58;
+function NWGetPrinterStatus;  StdCall; external 'calwin32.dll' index 155;
+function NWGetPrinterStrings;  StdCall; external 'calwin32.dll' index 449;
+function NWGetProtocolStackConfigInfo;  StdCall; external 'calwin32.dll' index 430;
+function NWGetProtocolStackCustomInfo;  StdCall; external 'calwin32.dll' index 431;
+function NWGetProtocolStackStatsInfo;  StdCall; external 'calwin32.dll' index 432;
+function NWGetProtocolStkNumsByLANBrdNum;  StdCall; external 'calwin32.dll' index 433;
+function NWGetProtocolStkNumsByMediaNum;  StdCall; external 'calwin32.dll' index 434;
+function NWGetQueueJobFileSize;  StdCall; external 'calwin32.dll' index 57;
+function NWGetQueueJobFileSize2;  StdCall; external 'calwin32.dll' index 240;
+function NWGetQueueJobList;  StdCall; external 'calwin32.dll' index 55;
+function NWGetQueueJobList2;  StdCall; external 'calwin32.dll' index 239;
+function NWGetRequesterVersion;  StdCall; external 'calwin32.dll' index 75;
+function NWGetServerInfo;  StdCall; external 'calwin32.dll' index 493;
+function NWGetServerSetCategories;  StdCall; external 'calwin32.dll' index 497;
+function NWGetServerSetCommandsInfo;  StdCall; external 'calwin32.dll' index 496;
+function NWGetServerSourcesInfo;  StdCall; external 'calwin32.dll' index 494;
+function NWGetSparseFileBitMap;  StdCall; external 'calwin32.dll' index 523;
+function NWGetSupportModuleCapacity;  StdCall; external 'calwin32.dll' index 579;
+function NWGetSupportModuleInfo;  StdCall; external 'calwin32.dll' index 435;
+function NWGetTTSStats;  StdCall; external 'calwin32.dll' index 352;
+function NWGetTaskInformationByConn;  StdCall; external 'calwin32.dll' index 356;
+function NWGetUserInfo;  StdCall; external 'calwin32.dll' index 436;
+function NWGetVolumeInfoByLevel;  StdCall; external 'calwin32.dll' index 504;
+function NWGetVolumeInfoWithHandle;  StdCall; external 'calwin32.dll' index 108;
+function NWGetVolumeInfoWithNumber;  StdCall; external 'calwin32.dll' index 109;
+function NWGetVolumeName;  StdCall; external 'calwin32.dll' index 110;
+function NWGetVolumeNumber;  StdCall; external 'calwin32.dll' index 111;
+function NWGetVolumeSegmentList;  StdCall; external 'calwin32.dll' index 437;
+function NWGetVolumeStats;  StdCall; external 'calwin32.dll' index 357;
+function NWGetVolumeSwitchInfo;  StdCall; external 'calwin32.dll' index 438;
+function NWIntEraseFiles;  StdCall; external 'calwin32.dll' index 387;
+function NWIntFileSearchContinue;  StdCall; external 'calwin32.dll' index 213;
+function NWIntMoveDirEntry;  StdCall; external 'calwin32.dll' index 382;
+function NWIntScanDirEntryInfo;  StdCall; external 'calwin32.dll' index 380;
+function NWIntScanDirectoryInformation;  StdCall; external 'calwin32.dll' index 381;
+function NWIntScanDirectoryInformation2;  StdCall; external 'calwin32.dll' index 379;
+function NWIntScanExtendedInfo;  StdCall; external 'calwin32.dll' index 383;
+function NWIntScanFileInformation;  StdCall; external 'calwin32.dll' index 384;
+function NWIntScanFileInformation2;  StdCall; external 'calwin32.dll' index 385;
+function NWIntScanForTrustees;  StdCall; external 'calwin32.dll' index 378;
+function NWIsIDInUse;  StdCall; external 'calwin32.dll' index 214;
+function NWIsLNSSupportedOnVolume;  StdCall; external 'calwin32.dll' index 174;
+function NWIsManager;  StdCall; external 'calwin32.dll' index 530;
+function NWIsObjectInSet;  StdCall; external 'calwin32.dll' index 23;
+function NWLockConnection;  StdCall; external 'calwin32.dll' index 503;
+function NWLockFileLockSet;  StdCall; external 'calwin32.dll' index 133;
+function NWLockLogicalRecordSet;  StdCall; external 'calwin32.dll' index 139;
+function NWLockPhysicalRecordSet;  StdCall; external 'calwin32.dll' index 127;
+function NWLogFileLock2;  StdCall; external 'calwin32.dll' index 391;
+function NWLogLogicalRecord;  StdCall; external 'calwin32.dll' index 138;
+function NWLogPhysicalRecord;  StdCall; external 'calwin32.dll' index 126;
+function NWLoginToFileServer;  StdCall; external 'calwin32.dll' index 16;
+function NWLogoutFromFileServer;  StdCall; external 'calwin32.dll' index 4;
+function NWLongSwap;  StdCall; external 'calwin32.dll' index 145;
+function NWModifyMaximumRightsMask;  StdCall; external 'calwin32.dll' index 79;
+(* Not defined  NWMoveDirEntry;  StdCall; external 'calwin32.dll' index 278;  *)
+function NWMoveFileFromDM;  StdCall; external 'calwin32.dll' index 439;
+function NWMoveFileToDM;  StdCall; external 'calwin32.dll' index 440;
+function NWNCPExtensionRequest;  StdCall; external 'calwin32.dll' index 471;
+function NWNSGetDefaultNS;  StdCall; external 'calwin32.dll' index 561;
+function NWNSGetMiscInfo;  StdCall; external 'calwin32.dll' index 272;
+function NWNSRename;  StdCall; external 'calwin32.dll' index 388;
+function NWOpenBindery;  StdCall; external 'calwin32.dll' index 36;
+function NWOpenCreateNSEntry;  StdCall; external 'calwin32.dll' index 279;
+function NWOpenDataStream;  StdCall; external 'calwin32.dll' index 280;
+function NWOpenEA;  StdCall; external 'calwin32.dll' index 299;
+function NWOpenNSEntry;  StdCall; external 'calwin32.dll' index 305;
+function NWOpenSemaphore;  StdCall; external 'calwin32.dll' index 98;
+(* Not defined  NWOrderedRequestToAll;  StdCall; external 'calwin32.dll' index 203;  *)
+function NWPackDate;  StdCall; external 'calwin32.dll' index 505;
+function NWPackDateTime;  StdCall; external 'calwin32.dll' index 507;
+function NWPackTime;  StdCall; external 'calwin32.dll' index 506;
+function NWParseNetWarePath;  StdCall; external 'calwin32.dll' index 103;
+function NWParsePath;  StdCall; external 'calwin32.dll' index 104;
+function NWParsePathConnRef;  StdCall; external 'calwin32.dll' index 106;
+function NWParseUNCPath;  StdCall; external 'calwin32.dll' index 180;
+function NWParseUNCPathConnRef;  StdCall; external 'calwin32.dll' index 182;
+function NWPurgeDeletedFile;  StdCall; external 'calwin32.dll' index 281;
+function NWPurgeErasedFiles;  StdCall; external 'calwin32.dll' index 113;
+function NWQueryAccountingInstalled;  StdCall; external 'calwin32.dll' index 358;
+function NWReadEA;  StdCall; external 'calwin32.dll' index 282;
+function NWReadExtendedNSInfo;  StdCall; external 'calwin32.dll' index 283;
+function NWReadNSInfo;  StdCall; external 'calwin32.dll' index 284;
+function NWReadPropertyValue;  StdCall; external 'calwin32.dll' index 19;
+function NWReadQueueCurrentStatus;  StdCall; external 'calwin32.dll' index 61;
+function NWReadQueueCurrentStatus2;  StdCall; external 'calwin32.dll' index 241;
+function NWReadQueueJobEntry;  StdCall; external 'calwin32.dll' index 56;
+function NWReadQueueJobEntry2;  StdCall; external 'calwin32.dll' index 242;
+function NWReadQueueServerCurrentStatus;  StdCall; external 'calwin32.dll' index 65;
+function NWReadQueueServerCurrentStatus2;  StdCall; external 'calwin32.dll' index 243;
+function NWRecoverDeletedFile;  StdCall; external 'calwin32.dll' index 285;
+function NWReleaseFileLock2;  StdCall; external 'calwin32.dll' index 392;
+function NWReleaseFileLockSet;  StdCall; external 'calwin32.dll' index 134;
+function NWReleaseLogicalRecord;  StdCall; external 'calwin32.dll' index 142;
+function NWReleaseLogicalRecordSet;  StdCall; external 'calwin32.dll' index 140;
+function NWReleasePhysicalRecord;  StdCall; external 'calwin32.dll' index 130;
+function NWReleasePhysicalRecordSet;  StdCall; external 'calwin32.dll' index 128;
+function NWRemoveJobFromQueue;  StdCall; external 'calwin32.dll' index 54;
+function NWRemoveJobFromQueue2;  StdCall; external 'calwin32.dll' index 244;
+function NWRemoveObjectDiskRestrictions;  StdCall; external 'calwin32.dll' index 307;
+function NWRenameDirectory;  StdCall; external 'calwin32.dll' index 159;
+function NWRenameFile;  StdCall; external 'calwin32.dll' index 160;
+function NWRenameObject;  StdCall; external 'calwin32.dll' index 34;
+function NWRequest;  StdCall; external 'calwin32.dll' index 150;
+(* Not defined  NWRequestToAll;  StdCall; external 'calwin32.dll' index 204;  *)
+function NWRestoreDirectoryHandle;  StdCall; external 'calwin32.dll' index 359;
+function NWRestoreErasedFile;  StdCall; external 'calwin32.dll' index 112;
+function NWRestoreQueueServerRights;  StdCall; external 'calwin32.dll' index 72;
+function NWSMAddNSToVolume;  StdCall; external 'calwin32.dll' index 575;
+function NWSMDismountVolumeByName;  StdCall; external 'calwin32.dll' index 574;
+function NWSMDismountVolumeByNumber;  StdCall; external 'calwin32.dll' index 573;
+function NWSMExecuteNCFFile;  StdCall; external 'calwin32.dll' index 578;
+function NWSMLoadNLM;  StdCall; external 'calwin32.dll' index 570;
+function NWSMMountVolume;  StdCall; external 'calwin32.dll' index 572;
+function NWSMSetDynamicCmdIntValue;  StdCall; external 'calwin32.dll' index 577;
+function NWSMSetDynamicCmdStrValue;  StdCall; external 'calwin32.dll' index 576;
+function NWSMUnloadNLM;  StdCall; external 'calwin32.dll' index 571;
+function NWSaveDirectoryHandle;  StdCall; external 'calwin32.dll' index 360;
+function NWScanConnectionsUsingFile;  StdCall; external 'calwin32.dll' index 361;
+(* Not defined  NWScanDirEntryInfo;  StdCall; external 'calwin32.dll' index 286;  *)
+function NWScanDirectoryForTrustees;  StdCall; external 'calwin32.dll' index 80;
+function NWScanDirectoryForTrustees2;  StdCall; external 'calwin32.dll' index 169;
+(* Not defined  NWScanDirectoryInformation;  StdCall; external 'calwin32.dll' index 81;  *)
+(* Not defined  NWScanDirectoryInformation2;  StdCall; external 'calwin32.dll' index 170;  *)
+(* Not defined  NWScanExtendedInfo;  StdCall; external 'calwin32.dll' index 287;  *)
+(* Not defined  NWScanFileInformation;  StdCall; external 'calwin32.dll' index 153;  *)
+(* Not defined  NWScanFileInformation2;  StdCall; external 'calwin32.dll' index 171;  *)
+function NWScanForDeletedFiles;  StdCall; external 'calwin32.dll' index 288;
+(* Not defined  NWScanForTrustees;  StdCall; external 'calwin32.dll' index 289;  *)
+function NWScanLogicalLocksByConn;  StdCall; external 'calwin32.dll' index 362;
+function NWScanLogicalLocksByName;  StdCall; external 'calwin32.dll' index 363;
+function NWScanNCPExtensions;  StdCall; external 'calwin32.dll' index 470;
+function NWScanNSEntryInfo;  StdCall; external 'calwin32.dll' index 290;
+function NWScanObject;  StdCall; external 'calwin32.dll' index 27;
+function NWScanObjectTrusteePaths;  StdCall; external 'calwin32.dll' index 38;
+function NWScanOpenFilesByConn;  StdCall; external 'calwin32.dll' index 364;
+function NWScanOpenFilesByConn2;  StdCall; external 'calwin32.dll' index 394;
+function NWScanPhysicalLocksByConnFile;  StdCall; external 'calwin32.dll' index 365;
+function NWScanPhysicalLocksByFile;  StdCall; external 'calwin32.dll' index 366;
+function NWScanProperty;  StdCall; external 'calwin32.dll' index 24;
+function NWScanSemaphoresByConn;  StdCall; external 'calwin32.dll' index 367;
+function NWScanSemaphoresByName;  StdCall; external 'calwin32.dll' index 368;
+function NWScanVolDiskRestrictions;  StdCall; external 'calwin32.dll' index 308;
+function NWScanVolDiskRestrictions2;  StdCall; external 'calwin32.dll' index 519;
+function NWSendBroadcastMessage;  StdCall; external 'calwin32.dll' index 121;
+function NWSendConsoleBroadcast;  StdCall; external 'calwin32.dll' index 125;
+function NWServiceQueueJob;  StdCall; external 'calwin32.dll' index 68;
+function NWServiceQueueJob2;  StdCall; external 'calwin32.dll' index 245;
+function NWSetBannerUserName;  StdCall; external 'calwin32.dll' index 450;
+function NWSetBroadcastMode;  StdCall; external 'calwin32.dll' index 123;
+function NWSetCaptureFlags;  StdCall; external 'calwin32.dll' index 451;
+function NWSetCompressedFileSize;  StdCall; external 'calwin32.dll' index 538;
+function NWSetDefaultSupportModule;  StdCall; external 'calwin32.dll' index 441;
+function NWSetDirEntryInfo;  StdCall; external 'calwin32.dll' index 291;
+function NWSetDirSpaceLimit;  StdCall; external 'calwin32.dll' index 292;
+function NWSetDirectoryHandlePath;  StdCall; external 'calwin32.dll' index 85;
+function NWSetDirectoryInformation;  StdCall; external 'calwin32.dll' index 82;
+function NWSetDriveBase;  StdCall; external 'calwin32.dll' index 11;
+function NWSetExtendedFileAttributes2;  StdCall; external 'calwin32.dll' index 303;
+function NWSetFileAttributes;  StdCall; external 'calwin32.dll' index 162;
+function NWSetFileInformation;  StdCall; external 'calwin32.dll' index 154;
+function NWSetFileInformation2;  StdCall; external 'calwin32.dll' index 173;
+function NWSetFileServerDateAndTime;  StdCall; external 'calwin32.dll' index 353;
+function NWSetInitDrive;  StdCall; external 'calwin32.dll' index 163;
+function NWSetLongName;  StdCall; external 'calwin32.dll' index 293;
+function NWSetNSEntryDOSInfo;  StdCall; external 'calwin32.dll' index 395;
+function NWSetObjectVolSpaceLimit;  StdCall; external 'calwin32.dll' index 309;
+function NWSetPrimaryConnectionID;  StdCall; external 'calwin32.dll' index 14;
+function NWSetPrinterStrings;  StdCall; external 'calwin32.dll' index 452;
+function NWSetQueueCurrentStatus;  StdCall; external 'calwin32.dll' index 62;
+function NWSetQueueCurrentStatus2;  StdCall; external 'calwin32.dll' index 246;
+function NWSetQueueServerCurrentStatus;  StdCall; external 'calwin32.dll' index 73;
+function NWSignalSemaphore;  StdCall; external 'calwin32.dll' index 101;
+function NWSpoolCancelCapture;  StdCall; external 'calwin32.dll' index 41;
+function NWSpoolEndCapture;  StdCall; external 'calwin32.dll' index 40;
+function NWSpoolGetBannerUserName;  StdCall; external 'calwin32.dll' index 45;
+function NWSpoolSetBannerUserName;  StdCall; external 'calwin32.dll' index 46;
+function NWStartQueueCapture;  StdCall; external 'calwin32.dll' index 453;
+function NWStripServerOffPath;  StdCall; external 'calwin32.dll' index 188;
+function NWSubmitAccountCharge;  StdCall; external 'calwin32.dll' index 371;
+function NWSubmitAccountHold;  StdCall; external 'calwin32.dll' index 372;
+function NWSubmitAccountNote;  StdCall; external 'calwin32.dll' index 373;
+function NWTTSAbortTransaction;  StdCall; external 'calwin32.dll' index 90;
+function NWTTSBeginTransaction;  StdCall; external 'calwin32.dll' index 88;
+function NWTTSEndTransaction;  StdCall; external 'calwin32.dll' index 89;
+function NWTTSGetConnectionThresholds;  StdCall; external 'calwin32.dll' index 94;
+function NWTTSGetControlFlags;  StdCall; external 'calwin32.dll' index 96;
+function NWTTSGetProcessThresholds;  StdCall; external 'calwin32.dll' index 92;
+function NWTTSIsAvailable;  StdCall; external 'calwin32.dll' index 87;
+function NWTTSSetConnectionThresholds;  StdCall; external 'calwin32.dll' index 95;
+function NWTTSSetControlFlags;  StdCall; external 'calwin32.dll' index 97;
+function NWTTSSetProcessThresholds;  StdCall; external 'calwin32.dll' index 93;
+function NWTTSTransactionStatus;  StdCall; external 'calwin32.dll' index 91;
+procedure NWUnpackDate;  StdCall; external 'calwin32.dll' index 478;
+procedure NWUnpackDateTime;  StdCall; external 'calwin32.dll' index 480;
+procedure NWUnpackTime;  StdCall; external 'calwin32.dll' index 479;
+function NWVerifyObjectPassword;  StdCall; external 'calwin32.dll' index 17;
+function NWWaitOnSemaphore;  StdCall; external 'calwin32.dll' index 100;
+function NWWordSwap;  StdCall; external 'calwin32.dll' index 144;
+function NWWriteEA;  StdCall; external 'calwin32.dll' index 294;
+function NWWriteExtendedNSInfo;  StdCall; external 'calwin32.dll' index 295;
+function NWWriteNSInfo;  StdCall; external 'calwin32.dll' index 296;
+function NWWritePropertyValue;  StdCall; external 'calwin32.dll' index 20;
+(* Not defined  WildCardCheck;  StdCall; external 'calwin32.dll' index 206;  *)
+(* Not defined  _LMemCmp;  StdCall; external 'calwin32.dll' index 210;  *)
+(* Not defined  _LMovMem;  StdCall; external 'calwin32.dll' index 209;  *)
+(* Not defined  _LSetMem;  StdCall; external 'calwin32.dll' index 211;  *)
+(* Not defined  _LStrCat;  StdCall; external 'calwin32.dll' index 300;  *)
+(* Not defined  _LStrCpy;  StdCall; external 'calwin32.dll' index 301;  *)
+(* Not defined  _LStrLen;  StdCall; external 'calwin32.dll' index 208;  *)
+procedure _NWConvert4ByteTo6ByteHandle;  StdCall; external 'calwin32.dll' index 297;
+function _NWConvertHandle;  StdCall; external 'calwin32.dll' index 298;
+(* Not defined  _NWFillComponentPath;  StdCall; external 'calwin32.dll' index 195;  *)
+(* Not defined  _NWFillComponentPath2;  StdCall; external 'calwin32.dll' index 196;  *)
+(* Not defined  _NWFillHandlePathStruct;  StdCall; external 'calwin32.dll' index 199;  *)
+(* Not defined  _NWFillHandlePathStruct2;  StdCall; external 'calwin32.dll' index 200;  *)
+(* Not defined  _NWFillWildPath;  StdCall; external 'calwin32.dll' index 207;  *)
+(* Not defined  _NWGetComPathLen2;  StdCall; external 'calwin32.dll' index 474;  *)
+(* Not defined  _NWGetCompathStructLength;  StdCall; external 'calwin32.dll' index 397;  *)
+function _NWGetFileServerType;  StdCall; external 'calwin32.dll' index 248;
+function _NWGetRequesterType;  StdCall; external 'calwin32.dll' index 202;
+(* Not defined  _NWMakeComponentPath;  StdCall; external 'calwin32.dll' index 499;  *)
+(* Not defined  __LStrChr;  StdCall; external 'calwin32.dll' index 476;  *)
+(* Not defined  __NWFillComponentPath2;  StdCall; external 'calwin32.dll' index 514;  *)
+(* Not defined  __NWFillHandlePathStruct;  StdCall; external 'calwin32.dll' index 515;  *)
+(* Not defined  __NWFillHandlePathStruct2;  StdCall; external 'calwin32.dll' index 516;  *)
+(* Not defined  __NWFillWildPath;  StdCall; external 'calwin32.dll' index 517;  *)
+(* function __NWGetCurNS;  StdCall; external 'calwin32.dll' index 531;
+*)(* Not defined  __NWGetCurrentDirectory;  StdCall; external 'calwin32.dll' index 187;  *)
+(* Not defined  __NWGetCurrentDrive;  StdCall; external 'calwin32.dll' index 186;  *)
+(* Not defined  __NWGetDriveType;  StdCall; external 'calwin32.dll' index 184;  *)
+(* Not defined  __NWGetNumberDrives;  StdCall; external 'calwin32.dll' index 185;  *)
+(* Not defined  _enumEA;  StdCall; external 'calwin32.dll' index 521;  *)
+
