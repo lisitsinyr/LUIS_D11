@@ -17,7 +17,7 @@ uses Windows, SysUtils, Classes, Graphics, Forms, Controls, StdCtrls,
 
   LUMAPICDO,
 
-  ImgList, LUObjects;
+  ImgList, LUObjects, System.ImageList;
 
 type
    TFormOpenFolderExchange = class(TForm)
@@ -25,7 +25,6 @@ type
       ButtonCancel: TButton;
       Label1: TLabel;
       ImageList1: TImageList;
-    LUTreeViewFolders: TLUTreeViewFolders;
       procedure LUTreeViewFoldersSetIcon(Node: TTreeNode; Expanded: Boolean);
       function GetFolderID: string;
       function GetStoreID: string;
