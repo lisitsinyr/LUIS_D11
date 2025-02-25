@@ -68,7 +68,11 @@ LOG/
 OUT/
 EXE/
 WORK/
+00.INFO/
+.INFO/
+Writerside/
 
+/target
 
 
 
