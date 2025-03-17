@@ -1,55 +1,44 @@
-# IDE files
-*.~*~
-*.local
-*.identcache
-__history
+.editorconfig
 
-# Delphi Compiler output files
-*.drc
-*.map
-*.jdbg
-*.tds
-*.exe
-*.dll
-*.bpl
-*.dcu
-*.dcp
+### -------------------------------------
+### VS Code ###
+### -------------------------------------
+.vscode/
+.vs/
 
-# C++ Builder Compiler output files
-*.bpi
-*.obj
-*.lib
-*.hpp
-*.i
-*.il?
-*.#??
-*.pbi
-
-# 64bit Delphi/C++Builder files
-*.[ao]
-
-
-
-*.dsk
-*.~dsk
-*.res
-*.dsm
-*.dof
-*.bat
-*.cfg
-
-*.~dpr
+### -------------------------------------
+### PyCharm ###
+### -------------------------------------
+.idea/
+.venv/
+__pycache__/
+.mypy_cache/
+.pytest_cache/
 
 ### -------------------------------------
 ### Файлы
 ### -------------------------------------
 ###  Secrets ### 
-env_file
 *.env
+.env.*
 *.key
 *.cer
 *.crt
 *.pfx
+
+# Исключить все файлы с расширение .a
+.a
+
+# Но отслеживать файл lib.a даже если он подпадает под исключение выше
+!lib.a
+
+# Исключить файл TODO в корневом каталоге, но не файл в subdir/TODO
+/TODO
+
+### Исключить все файлы с расширение ###
+*.log
+*.egg-info
+*.ipynb_checkpoints
 
 ### -------------------------------------
 ### Корневой каталог
@@ -73,37 +62,3 @@ WORK/
 Writerside/
 
 /target
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Lib directories
-#jcl/lib/*/*.res
-#jcl/lib/*/debug/*.res
-#jcl/lib/*/win*/*.res
-#jcl/lib/*/win*/debug/*.res
-
-# JCL files
-#jcl/bin/*
-#jcl/install/dcc32_command.cmd
-#jcl/install/dcc32.cfg
-
-# Auto generated compiler version include files
-#jcl/source/include/jcld*.inc
-#jcl/source/include/jclc*.inc
-#jcl/source/include/jclfpc.inc
-#jcl/source/include/jclwin32.inc
-
-# InnoSetup installer
-#thirdparty/InnoSetup/setupbuild/*
-#thirdparty/InnoSetup/Settings.iss
-#/thirdparty/makedist/*.log

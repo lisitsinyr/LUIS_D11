@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.479,=luPackage.dcp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.947,D:\PROJECTS_LYR\CHECK_LIST\05_DESKTOP\01_Pascal_Delphi\03_Delphi_CE\PROJECTS\LUIS_CE\General\vCE\LUExcel.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.412,D:\PROJECTS_LYR\CHECK_LIST\05_DESKTOP\01_Pascal_Delphi\03_Delphi_CE\PROJECTS\LUIS_CE\General\vCE\LUTextData.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.775,D:\PROJECTS_LYR\CHECK_LIST\05_DESKTOP\01_Pascal_Delphi\03_Delphi_CE\PROJECTS\LUIS_CE\General\vCE\PageSetup.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.818,=D:\PROJECTS_LYR\CHECK_LIST\05_DESKTOP\01_Pascal_Delphi\03_Delphi_CE\PROJECTS\LUIS_CE\General\vCE\LUStrUtils.pas</Transaction>
+  </Transactions>
+</BorlandProject>
